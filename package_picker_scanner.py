@@ -88,6 +88,7 @@ def getboxlocation():
         if nearest contour is in middle of the picture or distance==0:
             break
         image = getPic()
+        #There's a small assumption that our parcels are all black(which can be changed if needed) while truck's trailer is distinctively different color.
         lower = np.array([0, 0, 0])
         upper = np.array([15, 15, 15])
         shapeMask = cv2.inRange(image, lower, upper)
